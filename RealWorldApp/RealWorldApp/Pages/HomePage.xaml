@@ -7,7 +7,12 @@
             x:Class="RealWorldApp.Pages.HomePage"
             xmlns:androidSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             xmlns:pages="clr-namespace:RealWorldApp.Pages"
-            androidSpecific:TabbedPage.ToolbarPlacement="Bottom" >
+            androidSpecific:TabbedPage.ToolbarPlacement="Bottom" 
+            BarBackgroundColor="Blue"
+            SelectedTabColor="White"
+            UnselectedTabColor="White"
+            NavigationPage.HasNavigationBar="False"
+            >
 
     <pages:ExplorePage Title="Explore" IconImageSource="explore.png" />
     <pages:SellPage Title="Sell" IconImageSource="sell.png" />

@@ -6,6 +6,7 @@ namespace RealWorldApp.Models
 {
     public class UserImageModel
     {
-        public string imageUrl { get; set; } 
+        public string imageUrl { get; set; }
+        public string FullImagePath => $"https://avehicle.azurewebsites.net/{imageUrl}";
     }
 }
