@@ -29,6 +29,7 @@ namespace RealWorldApp.Pages
             if(response)
             {
                await DisplayAlert("Hi", "Login Succes", "Alright");
+                Application.Current.MainPage = new NavigationPage(new HomePage());
             }
             else
             {
