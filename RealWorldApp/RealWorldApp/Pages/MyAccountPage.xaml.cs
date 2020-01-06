@@ -75,5 +75,10 @@ namespace RealWorldApp.Pages
                 ImgProfile.Source = profileImage.FullImagePath;
             }
         }
+
+        private void TapChangePassword_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ChangePasswordPage());
+        }
     }
 }
