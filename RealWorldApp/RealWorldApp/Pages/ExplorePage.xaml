@@ -20,7 +20,7 @@
                            Text="Search Vehicle" />
                 </StackLayout>
                 <Frame.GestureRecognizers>
-                    <TapGestureRecognizer x:Name="TapSearch" />
+                    <TapGestureRecognizer x:Name="TapSearch" Tapped="TapSearch_Tapped_1" />
                 </Frame.GestureRecognizers>
             </Frame>
             <CollectionView x:Name="CvVehicles"
@@ -40,21 +40,21 @@
                                    WidthRequest="60"
                                    Source="bike.png">
                                 <Image.GestureRecognizers>
-                                    <TapGestureRecognizer x:Name="TapBike" />
+                                    <TapGestureRecognizer x:Name="TapBike" Tapped="TapBike_Tapped" />
                                 </Image.GestureRecognizers>
                             </Image>
                             <Image HeightRequest="60"
                                    WidthRequest="60"
                                    Source="car.png">
                                 <Image.GestureRecognizers>
-                                    <TapGestureRecognizer x:Name="TapCar" />
+                                    <TapGestureRecognizer x:Name="TapCar" Tapped="TapCar_Tapped"/>
                                 </Image.GestureRecognizers>
                             </Image>
                             <Image HeightRequest="60"
                                    WidthRequest="60"
                                    Source="truck.png">
                                 <Image.GestureRecognizers>
-                                    <TapGestureRecognizer x:Name="TapTruck" />
+                                    <TapGestureRecognizer x:Name="TapTruck" Tapped="TapTruck_Tapped"/>
                                 </Image.GestureRecognizers>
                             </Image>
                         </FlexLayout>

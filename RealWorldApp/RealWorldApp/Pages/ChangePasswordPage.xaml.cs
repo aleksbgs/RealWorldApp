@@ -32,5 +32,10 @@ namespace RealWorldApp.Pages
                 Application.Current.MainPage = new NavigationPage(new SignupPage());
             }
         }
+
+        private void BtnChangePassword_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

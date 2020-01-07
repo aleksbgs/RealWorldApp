@@ -38,5 +38,30 @@ namespace RealWorldApp.Pages
             var curentSelection = e.CurrentSelection.FirstOrDefault() as HotAndNewAd;
             Navigation.PushModalAsync(new ItemDetailPage(curentSelection.id));
         }
+
+        private void TapSearch_Tapped(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void TapCar_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new ItemsListPage(2));
+        }
+
+        private void TapTruck_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new ItemsListPage(3));
+        }
+
+        private void TapBike_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new ItemsListPage(1));
+        }
+
+        private void TapSearch_Tapped_1(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new SearchPage());
+        }
     }
 }

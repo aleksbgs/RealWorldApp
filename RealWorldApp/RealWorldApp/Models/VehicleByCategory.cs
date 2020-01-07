@@ -15,5 +15,10 @@ namespace RealWorldApp.Models
         public DateTime datePosted { get; set; }
         public bool isFeatured { get; set; }
         public string imageUrl { get; set; }
+
+        public string IsFeaturedAd => isFeatured ? "Featured" : "Free";
+        public string AdPostedDate => datePosted.ToString("y");
+
+        public string FullImagePath => $"https://avehicle.azurewebsites.net/{imageUrl}";
     }
 }
