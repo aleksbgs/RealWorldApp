@@ -70,7 +70,7 @@
                        TextColor="#303F9F"
                        FontSize="Medium">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer x:Name="TapLogout" />
+                        <TapGestureRecognizer x:Name="TapLogout" Tapped="TapLogout_Tapped"/>
                     </Label.GestureRecognizers>
                 </Label>
                 <BoxView HeightRequest="1"

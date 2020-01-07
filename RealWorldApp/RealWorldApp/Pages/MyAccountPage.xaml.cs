@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -84,6 +84,13 @@ namespace RealWorldApp.Pages
         private void TapChangePhone_Tapped(object sender, EventArgs e)
         {
             Navigation.PushAsync(new ChangePhonePage());
+        }
+
+        private void TapLogout_Tapped(object sender, EventArgs e)
+        {
+            Preferences.Set("accessToken", string.Empty);
+            Preferences.Set("tokenExpirationTime", 0);
+            Application.Current.MainPage = new NavigationPage(new SignupPage());
         }
     }
 }

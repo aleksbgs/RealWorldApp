@@ -44,6 +44,8 @@ namespace RealWorldApp.Services
             var result = JsonConvert.DeserializeObject<Token>(jsonResult);
             Preferences.Set("accessToken", result.access_token);
             Preferences.Set("user_id", result.user_Id);
+            Preferences.Set("tokenExpirationTime", result.expiration_Time);
+            Preferences.Set("currentTime", UnixTimeStamp.UnixTime.GetCurrentTime());
             return true;
         }
         public static async Task<bool> ChangePassword(string oldPassword,string newPassword,string confirmPassword)
@@ -55,6 +57,7 @@ namespace RealWorldApp.Services
                 ConfirmPassword = confirmPassword
 
             };
+            await TokenValidator.CheckTokenValidaty();
             var httpClient = new HttpClient();
             var json = JsonConvert.SerializeObject(changePassword);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -183,5 +186,21 @@ namespace RealWorldApp.Services
 
 
 
+    }
+    public static class TokenValidator
+    {
+        public static async Task CheckTokenValidaty()
+        {
+            var expirationTime = Preferences.Get("tokenExpirationTime", 0);
+            Preferences.Set("currentTime", UnixTimeStamp.UnixTime.GetCurrentTime());
+            var currentTime =  Preferences.Get("currentTime",0);
+            if(expirationTime < currentTime)
+            {
+                var email = Preferences.Get("email", string.Empty);
+                var password = Preferences.Get("password", string.Empty);
+                await ApiService.Login(email, password);
+            }
+
+        }
     }
 }
