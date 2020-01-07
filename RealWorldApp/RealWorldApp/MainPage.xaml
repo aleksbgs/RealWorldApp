@@ -18,7 +18,7 @@
             </ffimageloading:CachedImage.Transformations>
       
         </ffimageloading:CachedImage>-->
-        <Entry Placeholder="Enter User Nam33e"
+        <Entry Placeholder="Enter User Name"
                x:Name="EntUserName" />
         <Button Text="Save" x:Name="BtnSave"
                 Clicked="BtnSave_Clicked" />

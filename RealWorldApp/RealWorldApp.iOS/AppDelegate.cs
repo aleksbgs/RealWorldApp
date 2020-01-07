@@ -24,6 +24,7 @@ namespace RealWorldApp.iOS
         {
 
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
+            Xamarin.Forms.Forms.SetFlags("CarouselView_Experimental");
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
